@@ -6,9 +6,7 @@
  * @since   2024-04-03
  */
 
-
 import java.util.Scanner;
-
 
 /**
 * This is the standard MaxRun class.
@@ -51,7 +49,6 @@ final class MaxRun {
         return maxRun;
     }
 
-
     /**
     * The starting main() function.
     *
@@ -63,16 +60,15 @@ final class MaxRun {
         System.out.print("Enter a string: ");
         final String input = scanner.nextLine().trim();
 
-        // Error check
-        if (input.length()) {
-            System.out.println("Invalid input.");
-        } else {
-            // Process & output
+        // Process & output
+        if (input.length() > 0) {
             final int maxRun = maxRunFunction(input);
-            System.out.println("The string \"" + input + "\" has a max run of " + maxRun + "!");
+            System.out.println(
+                "The string \"" + input + "\" has a max run of " + maxRun + "!"
+            );
+        } else {
+            System.out.println("Invalid input.");
         }
-
         System.out.println("\nDone.");
-
     }
 }
